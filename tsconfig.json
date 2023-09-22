@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "baseUrl": "../..",
+    "rootDir": "./",
+    "outDir": "./dist",
+    "composite": true,
+    "incremental": true,
+    "lib": [
+      "ESNext"
+    ],
+    "module": "ESNext",
+    "target": "ESNext",
+    "declaration": true,
+    "strict": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "paths": {
+      "@minicommerce/*": [
+        "packages/*/src"
+      ]
+    }
+  },
+  "references": [
+    {
+      "path": "./packages/shared"
+    },
+    {
+      "path": "./packages/backend"
+    }
+  ],
+  "exclude": [
+    "packages/**/tests/**",
+    "packages/**/dist/**"
+  ]
+}

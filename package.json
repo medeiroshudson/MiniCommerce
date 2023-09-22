@@ -1,0 +1,11 @@
+{
+  "name": "@minicommerce/root",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {},
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
