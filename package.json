@@ -4,7 +4,13 @@
   "workspaces": [
     "packages/*"
   ],
-  "devDependencies": {},
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run buid"
+  },
+  "devDependencies": {
+    "turbo": "^1.10.14"
+  },
   "peerDependencies": {
     "typescript": "^5.0.0"
   }
