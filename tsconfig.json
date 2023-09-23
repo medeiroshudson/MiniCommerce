@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": "../..",
+    "baseUrl": ".",
     "rootDir": "./",
     "outDir": "./dist",
     "composite": true,
@@ -15,8 +15,12 @@
     "moduleResolution": "node",
     "esModuleInterop": true,
     "skipLibCheck": true,
+    "types": ["bun-types"],
     "forceConsistentCasingInFileNames": true,
     "paths": {
+      "@configuration": [
+        "config/"
+      ],
       "@minicommerce/*": [
         "packages/*/src"
       ]
@@ -29,6 +33,9 @@
     {
       "path": "./packages/backend"
     }
+  ],
+  "include": [
+    "config", "packages/*/src"
   ],
   "exclude": [
     "packages/**/tests/**",

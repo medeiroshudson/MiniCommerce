@@ -2,25 +2,20 @@ import { Hono } from "hono";
 import { cors } from "hono/cors";
 import { prettyJSON } from 'hono/pretty-json'
 
-import { Workspace } from '@minicommerce/shared'
+import { configuration } from '@configuration';
 
 const app = new Hono();
 
 app.use("*", prettyJSON());
 app.use("/api/*", cors());
 
-app.get('/workspaces', (c) => {
-    const workspaces: Workspace[] = [
-        { name: 'backend', version: '1.0.0' },
-        { name: 'shared', version: '1.0.0' }
-    ]
-
-    return c.json(workspaces);
+app.get('/info', (c) => {
+    return c.json({ environment: configuration.ENVIRONMENT, port: configuration.BACKEND_PORT });
 });
 
 app.notFound((c) => c.json({ message: "Not Found" }, 404));
 
 export default {
-    port: 5001,
-    fetch: app.fetch
+    fetch: app.fetch,
+    port: configuration.BACKEND_PORT
 }

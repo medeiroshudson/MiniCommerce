@@ -1,4 +1,4 @@
-export type Workspace = {
-    name: string
-    version: string
+export type Configuration = {
+    ENVIRONMENT: string;
+    BACKEND_PORT: number;
 }

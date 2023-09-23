@@ -6,10 +6,14 @@
   ],
   "scripts": {
     "dev": "turbo run dev",
-    "build": "turbo run buid"
+    "compile": "turbo run build",
+    "start": "turbo run start --filter=./packages/backend"
   },
   "devDependencies": {
-    "turbo": "^1.10.14"
+    "bun-types": "^1.0.3",
+    "dotenv-cli": "^7.3.0",
+    "turbo": "latest",
+    "@minicommerce/shared": "1.0.0"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"

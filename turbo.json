@@ -1,13 +1,20 @@
 {
-    "pipeline": {
-      "dev": {
-        "cache": false
-      },
-      "type-check": {
-        "outputs": []
-      },
-      "build": {
-        "outputs": ["dist/**"]
-      }
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": [".env"],
+  "pipeline": {
+    "dev": {
+      "cache": false,
+      "persistent": true,
+      "env": ["NODE_ENV", "BACKEND_PORT"]
+    },
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**"]
+    },
+    "start": {
+      "cache": true,
+      "persistent": true,
+      "env": ["NODE_ENV", "BACKEND_PORT"]
     }
   }
+}
