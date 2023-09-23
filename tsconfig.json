@@ -5,9 +5,7 @@
     "outDir": "./dist",
     "composite": true,
     "incremental": true,
-    "lib": [
-      "ESNext"
-    ],
+    "lib": ["ESNext"],
     "module": "ESNext",
     "target": "ESNext",
     "declaration": true,
@@ -18,27 +16,22 @@
     "types": ["bun-types"],
     "forceConsistentCasingInFileNames": true,
     "paths": {
-      "@configuration": [
-        "config/"
-      ],
-      "@minicommerce/*": [
-        "packages/*/src"
-      ]
+      "@configuration": ["config"],
+      "@minicommerce/*": ["apps/*/src", "packages/*/src"],
+      "@minicommerce/shared/*": ["packages/shared/*"],
     }
   },
   "references": [
     {
-      "path": "./packages/shared"
+      "path": "./apps/backend"
     },
     {
-      "path": "./packages/backend"
+      "path": "./packages/shared"
     }
   ],
-  "include": [
-    "config", "packages/*/src"
-  ],
+  "include": ["config", "apps/*/src", "packages/*/src"],
   "exclude": [
-    "packages/**/tests/**",
-    "packages/**/dist/**"
+    "apps/**/tests/**", "apps/**/dist/**",
+    "packages/**/tests/**", "packages/**/dist/**"
   ]
 }

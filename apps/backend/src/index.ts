@@ -2,18 +2,18 @@ import { Hono } from "hono";
 import { cors } from "hono/cors";
 import { prettyJSON } from 'hono/pretty-json'
 
+import { info, product } from './routes/'
 import { configuration } from '@configuration';
 
 const app = new Hono();
 
-app.use("*", prettyJSON());
-app.use("/api/*", cors());
+app.use(cors());
+app.use(prettyJSON());
 
-app.get('/info', (c) => {
-    return c.json({ environment: configuration.ENVIRONMENT, port: configuration.BACKEND_PORT });
-});
+app.route('/info', info);
+app.route('/product', product);
 
-app.notFound((c) => c.json({ message: "Not Found ssss" }, 404));
+app.notFound((c) => c.json({ message: "Not Found" }, 404));
 
 export default {
     fetch: app.fetch,

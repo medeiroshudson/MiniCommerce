@@ -1,20 +1,24 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "globalDependencies": [".env"],
+  "globalDependencies": [
+    ".env"
+  ],
   "pipeline": {
     "dev": {
       "cache": false,
-      "persistent": true,
-      "env": ["NODE_ENV", "BACKEND_PORT"]
+      "persistent": true
     },
     "build": {
-      "dependsOn": ["^build"],
-      "outputs": ["dist/**"]
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": [
+        "dist/**"
+      ]
     },
     "start": {
       "cache": true,
-      "persistent": true,
-      "env": ["NODE_ENV", "BACKEND_PORT"]
+      "persistent": true
     }
   }
 }

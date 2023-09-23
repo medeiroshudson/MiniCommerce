@@ -2,6 +2,7 @@
   "name": "@minicommerce/root",
   "private": true,
   "workspaces": [
+    "apps/*",
     "packages/*"
   ],
   "scripts": {
@@ -10,6 +11,7 @@
     "start": "turbo run start --filter=./packages/backend"
   },
   "dependencies": {
+    "dotenv": "^16.3.1",
     "turbo": "latest"
   },
   "devDependencies": {

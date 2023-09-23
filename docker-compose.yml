@@ -4,11 +4,11 @@ services:
   backend:
     build:
       context: .
-      target: development
+      target: production
       dockerfile: ./docker/dockerfile.backend
     env_file: .env
     volumes:
-      - ./packages/backend/src:/usr/src/app/packages/backend/src
+      - ./apps/backend/src:/usr/src/app/apps/backend/src
     ports:
       - 5001:80
     depends_on:
