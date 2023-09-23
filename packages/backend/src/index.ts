@@ -13,7 +13,7 @@ app.get('/info', (c) => {
     return c.json({ environment: configuration.ENVIRONMENT, port: configuration.BACKEND_PORT });
 });
 
-app.notFound((c) => c.json({ message: "Not Found" }, 404));
+app.notFound((c) => c.json({ message: "Not Found ssss" }, 404));
 
 export default {
     fetch: app.fetch,

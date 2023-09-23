@@ -1,0 +1,26 @@
+# base development image
+FROM oven/bun:1.0.3 AS development
+WORKDIR /usr/src/app
+COPY package*.json ./
+COPY tsconfig.json ./
+COPY turbo.json ./
+COPY config ./config
+COPY packages ./packages
+RUN rm -f bun.lockb && bun install
+CMD [ "bun", "dev" ]
+
+# preparing production build
+FROM development as builder
+WORKDIR /usr/src/app
+RUN rm -rf node_modules
+RUN bun install --production
+RUN bun compile
+
+# run production container
+FROM oven/bun:1.0.3 as production
+WORKDIR /app
+RUN apt update && apt install curl -y
+#ADD custom_ca_root.crt ## example adding custom CA certificate
+#RUN chmod 644 /usr/local/share/ca-certificates/custom_ca_root.crt && update-ca-certificates
+COPY --from=builder /usr/src/app/packages/backend/dist ./
+CMD [ "bun", "index.js" ]

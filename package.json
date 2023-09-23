@@ -9,11 +9,13 @@
     "compile": "turbo run build",
     "start": "turbo run start --filter=./packages/backend"
   },
+  "dependencies": {
+    "turbo": "latest"
+  },
   "devDependencies": {
     "bun-types": "^1.0.3",
     "dotenv-cli": "^7.3.0",
-    "turbo": "latest",
-    "@minicommerce/shared": "1.0.0"
+    "@minicommerce/shared": "workspace:*"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"

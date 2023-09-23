@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      target: development
+      dockerfile: ./docker/dockerfile.backend
+    env_file: .env
+    volumes:
+      - ./packages/backend/src:/usr/src/app/packages/backend/src
+    ports:
+      - 5001:80
+    depends_on:
+      - database
+
+  database:
+    image: postgres:16.0-bullseye
+    env_file: .env
+    volumes:
+      - db-data:/var/lib/postgresql/data:delegated
+    ports:
+      - 5432:5432
+
+volumes:
+  db-data:

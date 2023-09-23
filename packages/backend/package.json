@@ -13,6 +13,6 @@
     "hono": "^3.7.1"
   },
   "devDependencies": {
-    "@minicommerce/shared": "1.0.0"
+    "@minicommerce/shared": "workspace:*"
   }
 }
