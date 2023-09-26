@@ -6,10 +6,15 @@
     "composite": true
   },
   "include": [
-    "**/**/*.ts"
+    "**/*.ts",
+    "../../config"
   ],
-  "exclude": [
-    "node_modules",
-    "dist"
+  "references": [
+    {
+      "path": "../../packages/domain"
+    },
+    {
+      "path": "../../packages/infrastructure"
+    }
   ]
 }

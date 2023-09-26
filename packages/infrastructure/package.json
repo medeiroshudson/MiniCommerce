@@ -1,0 +1,15 @@
+{
+  "name": "@minicommerce/infrastructure",
+  "version": "1.0.0",
+  "private": true,
+  "devDependencies": {
+    "bun-types": "latest",
+    "@minicommerce/domain": "workspace:*"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.3.1"
+  }
+}

@@ -10,26 +10,23 @@
     "target": "ESNext",
     "declaration": true,
     "strict": true,
+    "strictNullChecks": false,
     "moduleResolution": "node",
     "esModuleInterop": true,
     "skipLibCheck": true,
     "types": ["bun-types"],
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "forceConsistentCasingInFileNames": true,
     "paths": {
       "@configuration": ["config"],
-      "@minicommerce/*": ["apps/*/src", "packages/*/src"],
-      "@minicommerce/shared/*": ["packages/shared/*"],
+      "@minicommerce/*": ["apps/*/src"],
+      "@minicommerce/domain/*": ["packages/domain/*"],
+      "@minicommerce/application/*": ["packages/application/*"],
+      "@minicommerce/infrastructure/*": ["packages/infrastructure/*"]
     }
   },
-  "references": [
-    {
-      "path": "./apps/backend"
-    },
-    {
-      "path": "./packages/shared"
-    }
-  ],
-  "include": ["config", "apps/*/src", "packages/*/src"],
+  "include": ["config", "apps/*/src", "packages/*"],
   "exclude": [
     "apps/**/tests/**", "apps/**/dist/**",
     "packages/**/tests/**", "packages/**/dist/**"

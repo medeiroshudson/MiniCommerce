@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "turbo run dev",
     "compile": "turbo run build",
-    "start": "turbo run start --filter=./packages/backend"
+    "start": "turbo run start --filter=./apps/backend"
   },
   "dependencies": {
     "dotenv": "^16.3.1",
@@ -16,8 +16,7 @@
   },
   "devDependencies": {
     "bun-types": "^1.0.3",
-    "dotenv-cli": "^7.3.0",
-    "@minicommerce/shared": "workspace:*"
+    "dotenv-cli": "^7.3.0"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"

@@ -1,0 +1,13 @@
+{
+  "name": "@minicommerce/application",
+  "version": "1.0.0",
+  "private": true,
+  "devDependencies": {
+    "bun-types": "latest",
+    "@minicommerce/domain": "workspace:*",
+    "@minicommerce/infrastructure": "workspace:*"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

@@ -3,7 +3,7 @@ import * as dotenv from 'dotenv';
 import PRODUCTION from './environments/production';
 import DEVELOPMENT from './environments/development';
 
-import { Configuration } from '@minicommerce/shared/types';
+import { Configuration } from '@minicommerce/domain/entities';
 
 dotenv.config();
 

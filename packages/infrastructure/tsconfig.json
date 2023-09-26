@@ -6,18 +6,12 @@
     "composite": true
   },
   "include": [
-    "src/**/*.ts",
+    "**/*.ts",
     "../../config"
   ],
   "references": [
     {
       "path": "../../packages/domain"
-    },
-    {
-      "path": "../../packages/application"
-    },
-    {
-      "path": "../../packages/infrastructure"
     }
   ]
 }
