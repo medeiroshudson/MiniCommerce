@@ -8,7 +8,8 @@ services:
       dockerfile: ./docker/dockerfile.backend
     env_file: .env
     volumes:
-      - ./apps/backend/src:/usr/src/app/apps/backend/src
+      - ./apps/backend/src:/usr/src/apps/backend/src
+      - ./packages/infrastructure/data/prisma:/usr/src/packages/infrastructure/data/prisma
     ports:
       - 5001:80
     depends_on:

@@ -21,6 +21,7 @@
     "paths": {
       "@configuration": ["config"],
       "@minicommerce/*": ["apps/*/src"],
+      "@minicommerce/shared/*": ["packages/shared/*"],
       "@minicommerce/domain/*": ["packages/domain/*"],
       "@minicommerce/application/*": ["packages/application/*"],
       "@minicommerce/infrastructure/*": ["packages/infrastructure/*"]

@@ -4,6 +4,7 @@
   "private": true,
   "devDependencies": {
     "bun-types": "latest",
+    "prisma": "^5.3.1",
     "@minicommerce/domain": "workspace:*"
   },
   "peerDependencies": {

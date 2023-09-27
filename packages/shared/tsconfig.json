@@ -8,10 +8,5 @@
   "include": [
     "**/**/*.ts",
     "../../config"
-  ],
-  "references": [
-    {
-      "path": "../../packages/domain"
-    }
   ]
 }
